@@ -1,0 +1,223 @@
+{
+  "name": "Image Accuracy Benchmark — Rome 110 CE Characters",
+  "description": "Raw prompts a user might naturally type vs. Triad-enhanced prompts grounded in the cultural guide. Both paths use the character's Supabase reference image (avatar) as the visual anchor via Vertex AI subject reference or Gemini visual analysis. The comparison isolates prompt quality — naive vs Triad-enhanced — not character generation from scratch.",
+  "model": "imagen-4.0-generate-001",
+  "character_pack": "ancient_rome",
+  "characters": {
+    "marcus": "Senator Marcus Tullius — age 58, senior senator, Stoic, Esquiline Hill villa",
+    "gaius": "Gaius the Merchant — age 35, freedman, spice and silk trader, Ostia connections",
+    "julia": "Julia Aurelia — age 22, patrician daughter, educated, Stoic philosophy student"
+  },
+  "shot_types": {
+    "portrait": "Close bust portrait, face and shoulders, character clearly readable",
+    "scene": "Character in a specific Rome 110 CE location, environment visible",
+    "action": "Character actively doing something characteristic of their role",
+    "marketing_hero": "Cinematic wide shot, dramatic lighting, campaign-quality composition",
+    "dialogue": "Two characters from our trio interacting — tests cross-character social dynamics and class distinctions",
+    "public_gathering": "Character at a Roman civic or social event with period-accurate crowd",
+    "domestic": "Character in private home or workplace with household members or staff",
+    "transit": "Character moving through Rome — street, harbor, or transport scene"
+  },
+  "prompts": [
+
+    {
+      "id": "marcus_portrait",
+      "character": "marcus",
+      "shot_type": "portrait",
+      "raw_prompt": "Portrait of Marcus, an old Roman senator, wearing a white toga, stern face",
+      "anachronisms_in_raw": ["generic toga with no class markers", "no period-specific details for a senator of his rank"],
+      "enhancement_goal": "Add toga praetexta (purple border for senator), age-accurate stern Stoic expression, Esquiline Hill interior setting, warm oil lamp lighting"
+    },
+    {
+      "id": "marcus_scene",
+      "character": "marcus",
+      "shot_type": "scene",
+      "raw_prompt": "Marcus, a Roman senator, giving a speech in the Colosseum",
+      "anachronisms_in_raw": ["Colosseum is for spectacles not speeches", "senators gave speeches in the Curia Julia or from the Rostra in the Forum Romanum"],
+      "enhancement_goal": "MUST: Marcus standing on a raised stone platform speaking to seated men in white togas inside a rectangular stone hall with high windows — the Roman Senate house. MUST: white toga with a wide purple border stripe. BACKGROUND: marble walls, wooden benches in rows, no columns outside — this is INDOORS in a formal hall, not an arena"
+    },
+    {
+      "id": "marcus_action",
+      "character": "marcus",
+      "shot_type": "action",
+      "raw_prompt": "Marcus, a Roman senator, writing with a pen and paper at his desk",
+      "anachronisms_in_raw": ["paper and modern pen don't exist in 110 CE", "should be wax tablet or papyrus scroll with a stylus"],
+      "enhancement_goal": "MUST: Marcus scratching letters into a small hinged wooden board filled with dark wax using a pointed metal stick — NO pen, NO paper, NO quill. MUST: white toga with purple border stripe. BACKGROUND: small Roman study room with stone walls, a single clay oil lamp with a flickering flame, rolled papyrus scrolls in cubbyholes behind him, wooden writing desk"
+    },
+    {
+      "id": "marcus_hero",
+      "character": "marcus",
+      "shot_type": "marketing_hero",
+      "raw_prompt": "Epic cinematic shot of Marcus, a powerful Roman senator, standing in ancient Rome",
+      "anachronisms_in_raw": ["vague — could render any era", "no character-specific grounding or dress markers"],
+      "enhancement_goal": "MUST: Marcus Tullius standing OUTDOORS in the Forum Romanum — open sky, ancient Roman stone plaza. MUST: white toga with a wide purple border clearly visible. BACKGROUND: weathered stone columns of the Temple of Saturn behind him, golden hour sunlight casting long shadows across Roman marble pavement, dignified Stoic expression"
+    },
+
+    {
+      "id": "gaius_portrait",
+      "character": "gaius",
+      "shot_type": "portrait",
+      "raw_prompt": "Portrait of Gaius, a Roman merchant, friendly face, wearing Roman clothes",
+      "anachronisms_in_raw": ["vague clothing — freedman would NOT wear toga", "no class-specific markers for a merchant of his background"],
+      "enhancement_goal": "MUST: Gaius wearing a plain knee-length linen tunic belted at the waist with a draped wool cloak over one shoulder — NOT a toga, simpler working clothes. MUST: a small round bronze disc on a leather cord around his neck, engraved with a winged staff symbol. Weathered sun-tanned face, warm proud expression of a self-made man. BACKGROUND: wooden market stall with clay jars and rolled fabric behind him"
+    },
+    {
+      "id": "gaius_scene",
+      "character": "gaius",
+      "shot_type": "scene",
+      "raw_prompt": "Gaius, a Roman merchant, selling goods at an ancient marketplace",
+      "anachronisms_in_raw": ["generic market — should be Forum Boarium or Ostia harbor", "goods should be period-specific spices, silk, amphorae"],
+      "enhancement_goal": "Ostia harbor market, stalls with rolled bolts of colored silk fabric, ceramic spice jars, clay amphorae — painted wooden guild sign with a winged staff symbol above the stall entrance, harbor ships visible in background"
+    },
+    {
+      "id": "gaius_action",
+      "character": "gaius",
+      "shot_type": "action",
+      "raw_prompt": "Gaius, a Roman trader, counting coins and making a deal",
+      "anachronisms_in_raw": ["coins correct but no period detail — should be aureus, denarius, sestertius on a counting board"],
+      "enhancement_goal": "MUST: Two men gripping each other's RIGHT WRISTS — not shaking hands, but each man grabs the other's forearm just above the wrist, elbows raised at chest height, sealing a deal. MUST: Gaius in a plain linen tunic, the other man in colorful patterned eastern robes. On the table between them: gold and silver coins spread on a flat wooden board. BACKGROUND: harbor dock, wooden ship masts and rope rigging visible behind them"
+    },
+    {
+      "id": "gaius_hero",
+      "character": "gaius",
+      "shot_type": "marketing_hero",
+      "raw_prompt": "Epic shot of Gaius, a successful Roman businessman, in ancient Rome at sunset",
+      "anachronisms_in_raw": ["businessman framing is anachronistic — freedman merchant has specific social position"],
+      "enhancement_goal": "MUST: Gaius in a plain linen tunic with a draped wool cloak, holding a rolled papyrus scroll, standing OUTDOORS at a harbor dock at sunset. MUST: behind him, workers are lifting large clay jars with two handles out of a wooden ship with a single square sail. BACKGROUND: golden sunset sky over the sea, harbor stone quay, wooden cranes, warm cinematic lighting"
+    },
+
+    {
+      "id": "julia_portrait",
+      "character": "julia",
+      "shot_type": "portrait",
+      "raw_prompt": "Portrait of Julia, a beautiful young Roman woman, with flowers in her hair",
+      "anachronisms_in_raw": ["flowers in hair are more Renaissance than Roman", "Roman women wore elaborate pinned hairstyles with acus crinales hairpins, not floral wreaths"],
+      "enhancement_goal": "Julia Aurelia, stola over tunica, palla draped, Roman sella chair, elaborate pinned Trajanic-era coiffure, educated and thoughtful expression"
+    },
+    {
+      "id": "julia_scene",
+      "character": "julia",
+      "shot_type": "scene",
+      "raw_prompt": "Julia, a Roman woman, relaxing in a beautiful garden reading a book",
+      "anachronisms_in_raw": ["codex book form was emerging but scroll (volumen) was dominant in 110 CE", "garden should be peristyle style with impluvium"],
+      "enhancement_goal": "Julia in peristyle garden of patrician domus, reading a papyrus scroll (volumen), wax tablet beside her for notes, columned garden with impluvium visible"
+    },
+    {
+      "id": "julia_action",
+      "character": "julia",
+      "shot_type": "action",
+      "raw_prompt": "Julia, a young Roman woman, writing a letter to a friend",
+      "anachronisms_in_raw": ["letter on paper is anachronistic — Romans wrote on wax tablets for correspondence or papyrus sheets"],
+      "enhancement_goal": "MUST: Julia scratching letters into a small hinged wooden board filled with dark wax using a pointed metal stick — NO pen, NO paper, NO book, NO quill. MUST: wearing a long draped dress in warm earth tones with a shawl. BACKGROUND: small Roman room with stone walls, a single clay oil lamp with flame, rolled papyrus scrolls stacked on wooden shelves, intelligent focused expression"
+    },
+    {
+      "id": "julia_hero",
+      "character": "julia",
+      "shot_type": "marketing_hero",
+      "raw_prompt": "Cinematic shot of Julia, an elegant young Roman woman, in ancient Rome",
+      "anachronisms_in_raw": ["no grounding — could render Renaissance or fantasy setting"],
+      "enhancement_goal": "MUST: Julia wearing a long floor-length saffron-yellow dress — vivid golden-yellow color, this is the most important detail — with a white wool shawl draped over her shoulders. NO purse, NO bag, NO modern accessories. MUST: standing OUTDOORS on stone steps at dusk, dignified intelligent expression, elaborate upswept pinned hairstyle. BACKGROUND: Roman stone building facade behind her, warm golden evening light, open sky visible"
+    },
+
+    {
+      "id": "marcus_dialogue",
+      "character": "marcus",
+      "shot_type": "dialogue",
+      "raw_prompt": "Marcus, a Roman senator, having a meeting with Gaius, a merchant, in ancient Rome",
+      "anachronisms_in_raw": ["vague setting — no location grounding", "social class distinction between senator and freedman merchant not visible in dress or posture"],
+      "enhancement_goal": "MUST: Two men standing face to face OUTDOORS in a Roman stone plaza — the older man in a white toga with a wide purple border stripe, the younger man in a plain linen tunic with a draped wool cloak. MUST: clear class distinction — the toga-wearing senator stands upright with authority, the merchant is slightly deferential. The merchant holds a small hinged wooden board. BACKGROUND: weathered stone columns of an ancient Roman temple, open sky, stone pavement"
+    },
+    {
+      "id": "gaius_dialogue",
+      "character": "gaius",
+      "shot_type": "dialogue",
+      "raw_prompt": "Gaius, a Roman merchant, making a business deal with a foreign trader",
+      "anachronisms_in_raw": ["handshake rendered as modern grip rather than Roman dextrarum iunctio", "no period-specific goods visible", "foreign trader has no period-accurate costume"],
+      "enhancement_goal": "MUST: Two men gripping each other's RIGHT WRISTS — not a handshake, each man grabs the other's forearm just above the wrist, elbows raised to chest height. MUST: Gaius in a plain linen tunic, the foreign trader wearing colorful layered patterned robes and a head wrap. Between them on a wooden table: a rolled papyrus scroll and tall clay storage jars. BACKGROUND: harbor dock, wooden ship masts visible, rope rigging"
+    },
+    {
+      "id": "julia_dialogue",
+      "character": "julia",
+      "shot_type": "dialogue",
+      "raw_prompt": "Julia, a young Roman woman, talking with Marcus, an older senator, about philosophy",
+      "anachronisms_in_raw": ["seated in modern chairs rather than Roman benches or garden seats", "codex books rather than papyrus scrolls", "no Roman architectural context"],
+      "enhancement_goal": "Julia in stola and palla in Stoic discussion with Senator Marcus in a colonnaded peristyle garden — marble garden benches, open papyrus scrolls, impluvium pool visible, oil lamp, intergenerational respectful dynamic, 110 CE"
+    },
+
+    {
+      "id": "marcus_public",
+      "character": "marcus",
+      "shot_type": "public_gathering",
+      "raw_prompt": "Marcus, a Roman senator, relaxing at the public baths with other men",
+      "anachronisms_in_raw": ["modern bathing suits or towels shown", "modern pool tiling rather than Roman hypocaust architecture", "no strigils or oil flasks"],
+      "enhancement_goal": "MUST: Marcus bare-chested sitting at the edge of a large stone pool filled with steaming water — NO modern towels, NO swimwear. MUST: a servant behind him scraping his back with a curved metal blade and pouring oil from a small clay flask. BACKGROUND: grand arched stone ceiling with high windows letting in light, steam rising from the pool, other men bathing in the background, marble columns"
+    },
+    {
+      "id": "gaius_public",
+      "character": "gaius",
+      "shot_type": "public_gathering",
+      "raw_prompt": "Gaius, a Roman merchant, at a guild meeting with other businessmen",
+      "anachronisms_in_raw": ["modern conference table", "participants in modern business attire", "no Roman collegium architectural setting"],
+      "enhancement_goal": "Gaius at an Ostia collegium meeting in the schola building — freedmen in tunics and pallia seated in a semicircle, wax tablets being passed, collegium standard on wall, statue of Mercury as patron deity, 110 CE"
+    },
+    {
+      "id": "julia_public",
+      "character": "julia",
+      "shot_type": "public_gathering",
+      "raw_prompt": "Julia, a Roman woman, watching a religious ceremony at a temple",
+      "anachronisms_in_raw": ["Christian-style kneeling or reverence (not Roman practice)", "church-like interior architecture", "wrong ceremonial dress for Roman religion"],
+      "enhancement_goal": "MUST: women in ankle-length white robes with white woolen bands woven through their upswept hair, tending a small fire burning on a circular stone altar. MUST: Julia standing to the side with her white palla fabric drawn up over her head in reverence. BACKGROUND: marble temple columns, stone plaza pavement, Forum Romanum crowd in Roman dress"
+    },
+
+    {
+      "id": "marcus_domestic",
+      "character": "marcus",
+      "shot_type": "domestic",
+      "raw_prompt": "Marcus, a Roman senator, greeting visitors at his home in the morning",
+      "anachronisms_in_raw": ["modern front door or entryway", "visitors in generic or modern clothing", "no impluvium atrium architecture"],
+      "enhancement_goal": "Marcus in toga praetexta receiving morning salutatio in his Esquiline Hill domus atrium — clientes lined up, impluvium pool under compluvium sky opening, lararium shrine with Lares, mosaic floor, oil lamps, 110 CE"
+    },
+    {
+      "id": "gaius_domestic",
+      "character": "gaius",
+      "shot_type": "domestic",
+      "raw_prompt": "Gaius, a Roman merchant, working in his office with his staff",
+      "anachronisms_in_raw": ["modern desk and chairs", "paper documents and modern writing instruments", "no period-specific Roman commercial workspace"],
+      "enhancement_goal": "Gaius in his Ostia taberna reviewing a wax tablet manifest — freedmen workers loading amphorae in background, abacus counting board, papyrus records in cubbyhole shelves, harbor visible through open doorway, clay seals and balance weights, 110 CE"
+    },
+    {
+      "id": "julia_domestic",
+      "character": "julia",
+      "shot_type": "domestic",
+      "raw_prompt": "Julia, a Roman woman, getting ready in her bedroom with her maids",
+      "anachronisms_in_raw": ["wall mirror (Romans only had small hand mirrors of polished bronze)", "modern cosmetics containers", "modern bedroom furniture"],
+      "enhancement_goal": "MUST: Julia seated on a backless wooden stool while a maid pins up her hair with long metal hairpins into an elaborate upswept style. MUST: another maid holds a small round polished bronze hand mirror — NOT a wall mirror, a small handheld disc mirror. On a low wooden table beside her: ivory combs and a small stone perfume bottle. BACKGROUND: simple Roman bedroom with stone walls, a low wooden bed frame with cloth, a single clay oil lamp. NO modern furniture, NO modern cosmetics"
+    },
+
+    {
+      "id": "marcus_transit",
+      "character": "marcus",
+      "shot_type": "transit",
+      "raw_prompt": "Marcus, a Roman senator, being carried through the streets of Rome in a chair",
+      "anachronisms_in_raw": ["litter may render as wrong-culture palanquin or modern sedan chair", "background crowd in modern dress", "cobblestone too modern-looking"],
+      "enhancement_goal": "MUST: Marcus in a white toga with purple border, reclining on cushions inside a covered wooden litter carried on poles by four men in simple tunics — fabric curtains pulled open showing his face. MUST: narrow ancient Roman street with tall stone apartment buildings on both sides, rough stone paving. BACKGROUND: pedestrians in Roman togas and tunics, a small round stone temple visible down the street, warm morning sunlight"
+    },
+    {
+      "id": "gaius_transit",
+      "character": "gaius",
+      "shot_type": "transit",
+      "raw_prompt": "Gaius, a Roman merchant, arriving at port on a ship",
+      "anachronisms_in_raw": ["modern ship hull design or rigging", "modern port infrastructure", "wrong sail configuration for a Roman round merchant vessel"],
+      "enhancement_goal": "MUST: Gaius in a plain linen tunic standing at the front of a wide wooden merchant ship with a single square sail — the ship is broad and rounded, a cargo vessel not a warship. MUST: large clay jars with two handles stacked as cargo on the deck. BACKGROUND: approaching a stone harbor with a squat stone lighthouse, workers on the stone quay waiting, blue Mediterranean sea, clear sky"
+    },
+    {
+      "id": "julia_transit",
+      "character": "julia",
+      "shot_type": "transit",
+      "raw_prompt": "Julia, a Roman woman, walking through ancient Rome with her servants",
+      "anachronisms_in_raw": ["patrician woman walking without proper escort", "modern street setting", "clothing too casual for a patrician woman outdoors"],
+      "enhancement_goal": "MUST: Julia in a long draped dress with a shawl pulled modestly over her head, walking OUTDOORS down a narrow ancient Roman street. MUST: a female servant walking behind her and a male guard beside her — NO modern clothing on anyone. NO notepad, NO book, NO pen — her hands are empty or holding the edge of her shawl. BACKGROUND: stone building facades with faded painted plaster walls, rough stone street paving, a small stone water fountain built into a wall, warm morning light"
+    }
+
+  ]
+}

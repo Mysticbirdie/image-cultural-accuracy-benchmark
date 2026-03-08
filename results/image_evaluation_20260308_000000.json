@@ -1,0 +1,1063 @@
+{
+  "benchmark": "Image Visual Evaluation \u2014 Rome 110 CE",
+  "judge": "gemini-2.0-flash",
+  "run_date": "2026-03-07 18:58:51",
+  "total_pairs": 24,
+  "evaluated": 24,
+  "summary": {
+    "raw_shows_anachronism": "3/24",
+    "triad_fixes_anachronism": "22.0/24",
+    "triad_accuracy_pct": 91.7,
+    "full_prompt_adherence": "20/24"
+  },
+  "interpretation": {
+    "raw_verdict": "FAIL means the image correctly showed the known anachronism (expected)",
+    "triad_verdict": "PASS means the Triad Engine successfully produced a historically accurate image",
+    "prompt_adherence": "Whether Imagen followed the enhanced prompt details (not Triad's fault if POOR)"
+  },
+  "results": [
+    {
+      "id": "marcus_portrait",
+      "character": "marcus",
+      "shot_type": "portrait",
+      "raw_prompt": "Portrait of Marcus, an old Roman senator, wearing a white toga, stern face",
+      "known_anachronisms": [
+        "generic toga with no class markers",
+        "no period-specific details for a senator of his rank"
+      ],
+      "enhancement_goal": "Add toga praetexta (purple border for senator), age-accurate stern Stoic expression, Esquiline Hill interior setting, warm oil lamp lighting",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PASS",
+        "raw_anachronisms_found": [],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a Roman senator in a toga praetexta with a stern expression, standing in front of Roman ruins. The clothing and expression are appropriate.",
+        "raw_accurate_details": [
+          "Toga with purple border (toga praetexta) indicating senatorial rank",
+          "Stern expression",
+          "Roman architecture in the background"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Toga with purple border (toga praetexta) indicating senatorial rank",
+          "Scroll",
+          "Stern expression",
+          "Roman interior setting with columns and pool"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a Roman senator in a toga praetexta, holding a scroll, in a plausible Roman interior. The setting and clothing are appropriate for the time period and social class.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is slightly more accurate due to the interior setting and the presence of a scroll, which adds to the plausibility of the scene.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "marcus_scene",
+      "character": "marcus",
+      "shot_type": "scene",
+      "raw_prompt": "Marcus, a Roman senator, giving a speech in the Colosseum",
+      "known_anachronisms": [
+        "Colosseum is for spectacles not speeches",
+        "senators gave speeches in the Curia Julia or from the Rostra in the Forum Romanum"
+      ],
+      "enhancement_goal": "MUST: Marcus standing on a raised stone platform speaking to seated men in white togas inside a rectangular stone hall with high windows \u2014 the Roman Senate house. MUST: white toga with a wide purple border stripe. BACKGROUND: marble walls, wooden benches in rows, no columns outside \u2014 this is INDOORS in a formal hall, not an arena",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "FAIL",
+        "raw_anachronisms_found": [
+          "Colosseum used for speeches",
+          "Podium",
+          "Large crowd of commoners present"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B depicts a Roman senator giving a speech to a large crowd in front of the Colosseum. This is inaccurate as the Colosseum was not used for speeches, and senators would give speeches in the Curia Julia or from the Rostra in the Forum Romanum.",
+        "raw_accurate_details": [
+          "Toga with purple border",
+          "Sandals"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Togas with purple border",
+          "Sandals",
+          "Marble architecture",
+          "Seated senators",
+          "Scroll",
+          "Indoor setting"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a Roman senator giving a speech to other senators in what appears to be the Curia Julia. The clothing, setting, and gestures are all consistent with historical accuracy.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate because it depicts the senator giving a speech in a setting more appropriate for the Roman Senate, while Image B incorrectly places the speech in front of the Colosseum.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "marcus_action",
+      "character": "marcus",
+      "shot_type": "action",
+      "raw_prompt": "Marcus, a Roman senator, writing with a pen and paper at his desk",
+      "known_anachronisms": [
+        "paper and modern pen don't exist in 110 CE",
+        "should be wax tablet or papyrus scroll with a stylus"
+      ],
+      "enhancement_goal": "MUST: Marcus scratching letters into a small hinged wooden board filled with dark wax using a pointed metal stick \u2014 NO pen, NO paper, NO quill. MUST: white toga with purple border stripe. BACKGROUND: small Roman study room with stone walls, a single clay oil lamp with a flickering flame, rolled papyrus scrolls in cubbyholes behind him, wooden writing desk",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "paper",
+          "modern pen"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a man in a toga writing on paper with a pen. The toga, scrolls, and desk are accurate, but the paper and pen are anachronisms. The background shows a Roman city.",
+        "raw_accurate_details": [
+          "toga with purple stripe",
+          "rolled papyrus scrolls",
+          "wooden writing desk"
+        ],
+        "triad_verdict": "PARTIAL",
+        "triad_corrections": [
+          "toga with purple stripe",
+          "clay oil lamp",
+          "rolled papyrus scrolls",
+          "wooden writing desk"
+        ],
+        "triad_remaining_issues": [
+          "paper",
+          "modern pen"
+        ],
+        "triad_notes": "Image A shows a man in a toga writing on paper with a pen. The toga, oil lamp, scrolls, and desk are accurate, but the paper and pen are anachronisms.",
+        "prompt_adherence": "PARTIAL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "MARGINAL",
+        "overall_notes": "Both images have the same anachronisms (paper and pen), so they are equally inaccurate.",
+        "which_more_accurate_blind": "EQUAL",
+        "which_more_accurate": "EQUAL"
+      }
+    },
+    {
+      "id": "marcus_hero",
+      "character": "marcus",
+      "shot_type": "marketing_hero",
+      "raw_prompt": "Epic cinematic shot of Marcus, a powerful Roman senator, standing in ancient Rome",
+      "known_anachronisms": [
+        "vague \u2014 could render any era",
+        "no character-specific grounding or dress markers"
+      ],
+      "enhancement_goal": "MUST: Marcus Tullius standing OUTDOORS in the Forum Romanum \u2014 open sky, ancient Roman stone plaza. MUST: white toga with a wide purple border clearly visible. BACKGROUND: weathered stone columns of the Temple of Saturn behind him, golden hour sunlight casting long shadows across Roman marble pavement, dignified Stoic expression",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern clothing on background people"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a man in a toga with a purple border in a crowded area with Roman architecture in the background, but the presence of modern clothing on other people is an anachronism.",
+        "raw_accurate_details": [
+          "Toga with purple border",
+          "Roman architecture in background"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Toga with purple border",
+          "Roman columns",
+          "Scroll"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a man in a toga with a purple border, holding a scroll, standing in front of Roman columns, which is historically accurate for a Roman senator in 110 CE.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate because it does not contain any visible anachronisms, while Image B includes modern clothing on background people.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "gaius_portrait",
+      "character": "gaius",
+      "shot_type": "portrait",
+      "raw_prompt": "Portrait of Gaius, a Roman merchant, friendly face, wearing Roman clothes",
+      "known_anachronisms": [
+        "vague clothing \u2014 freedman would NOT wear toga",
+        "no class-specific markers for a merchant of his background"
+      ],
+      "enhancement_goal": "MUST: Gaius wearing a plain knee-length linen tunic belted at the waist with a draped wool cloak over one shoulder \u2014 NOT a toga, simpler working clothes. MUST: a small round bronze disc on a leather cord around his neck, engraved with a winged staff symbol. Weathered sun-tanned face, warm proud expression of a self-made man. BACKGROUND: wooden market stall with clay jars and rolled fabric behind him",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "FAIL",
+        "raw_anachronisms_found": [
+          "Toga is worn by citizens, not merchants",
+          "The clothing is too elaborate for a merchant",
+          "The setting is too grand for a merchant's daily life"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts a man in a toga in a Roman city. The toga is not appropriate for a merchant, and the setting is too grand.",
+        "raw_accurate_details": [
+          "The architecture is Roman",
+          "The clothing style is Roman"
+        ],
+        "triad_verdict": "PARTIAL",
+        "triad_corrections": [
+          "The tunic is appropriate for a merchant",
+          "The setting is a marketplace",
+          "The clay jars and fabric rolls are appropriate for a marketplace"
+        ],
+        "triad_remaining_issues": [
+          "The pendant is not quite right, the winged staff symbol is not accurate",
+          "The clothing is too clean and new"
+        ],
+        "triad_notes": "Image B depicts a man in a tunic in a marketplace. The tunic is appropriate for a merchant, and the setting is accurate. The pendant is not quite right.",
+        "prompt_adherence": "PARTIAL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate because it depicts the merchant in a tunic in a marketplace, while Image A depicts the merchant in a toga in a grand setting, which is not appropriate.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "gaius_scene",
+      "character": "gaius",
+      "shot_type": "scene",
+      "raw_prompt": "Gaius, a Roman merchant, selling goods at an ancient marketplace",
+      "known_anachronisms": [
+        "generic market \u2014 should be Forum Boarium or Ostia harbor",
+        "goods should be period-specific spices, silk, amphorae"
+      ],
+      "enhancement_goal": "Ostia harbor market, stalls with rolled bolts of colored silk fabric, ceramic spice jars, clay amphorae \u2014 painted wooden guild sign with a winged staff symbol above the stall entrance, harbor ships visible in background",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern hairstyle on some background characters"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a Roman merchant in a marketplace with the Colosseum in the background. The clothing and goods are mostly accurate, but some hairstyles appear modern.",
+        "raw_accurate_details": [
+          "Roman tunic",
+          "marketplace setting",
+          "ceramic jars",
+          "rolled bolts of fabric",
+          "Roman architecture in background"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Roman tunic",
+          "leather sandals",
+          "amphorae",
+          "rolled bolts of fabric",
+          "marketplace setting",
+          "guild sign with winged staff",
+          "harbor ships"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a Roman merchant in a marketplace near a harbor. The clothing, goods, and setting are generally accurate for the period.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate due to the absence of modern hairstyles and the inclusion of a harbor setting, which aligns better with the prompt's request for a marketplace where goods like spices and silk would be traded.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "gaius_action",
+      "character": "gaius",
+      "shot_type": "action",
+      "raw_prompt": "Gaius, a Roman trader, counting coins and making a deal",
+      "known_anachronisms": [
+        "coins correct but no period detail \u2014 should be aureus, denarius, sestertius on a counting board"
+      ],
+      "enhancement_goal": "MUST: Two men gripping each other's RIGHT WRISTS \u2014 not shaking hands, but each man grabs the other's forearm just above the wrist, elbows raised at chest height, sealing a deal. MUST: Gaius in a plain linen tunic, the other man in colorful patterned eastern robes. On the table between them: gold and silver coins spread on a flat wooden board. BACKGROUND: harbor dock, wooden ship masts and rope rigging visible behind them",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Handshake instead of wrist-grip deal sealing",
+          "Generic coins instead of Roman currency"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a Roman trader counting coins with another man. The clothing and architecture are plausible, but the handshake is an anachronism, and the coins are generic.",
+        "raw_accurate_details": [
+          "Plain linen tunic for Roman trader",
+          "Roman architecture in the background"
+        ],
+        "triad_verdict": "PARTIAL",
+        "triad_corrections": [
+          "Plain linen tunic for Roman trader",
+          "Eastern robes for the other man",
+          "Harbor setting with wooden ships"
+        ],
+        "triad_remaining_issues": [
+          "Handshake instead of wrist-grip deal sealing",
+          "Generic coins instead of Roman currency"
+        ],
+        "triad_notes": "Image A depicts a Roman trader and an Eastern merchant sealing a deal at a harbor. The clothing and setting are generally accurate, but the handshake is an anachronism, and the coins are generic.",
+        "prompt_adherence": "PARTIAL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is slightly more accurate due to the inclusion of the harbor setting and the Eastern merchant, which were specified in the prompt, even though both images have the handshake anachronism.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "gaius_hero",
+      "character": "gaius",
+      "shot_type": "marketing_hero",
+      "raw_prompt": "Epic shot of Gaius, a successful Roman businessman, in ancient Rome at sunset",
+      "known_anachronisms": [
+        "businessman framing is anachronistic \u2014 freedman merchant has specific social position"
+      ],
+      "enhancement_goal": "MUST: Gaius in a plain linen tunic with a draped wool cloak, holding a rolled papyrus scroll, standing OUTDOORS at a harbor dock at sunset. MUST: behind him, workers are lifting large clay jars with two handles out of a wooden ship with a single square sail. BACKGROUND: golden sunset sky over the sea, harbor stone quay, wooden cranes, warm cinematic lighting",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern haircut",
+          "Modern clothing on background people",
+          "The toga is too ornate for a businessman",
+          "The gold ring is too large and ostentatious"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a man in a toga in front of Roman ruins. While the setting is accurate, the toga's style and the presence of modern clothing on background people are anachronistic.",
+        "raw_accurate_details": [
+          "Roman Forum setting",
+          "Temple architecture"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "linen tunic",
+          "wool cloak",
+          "papyrus scroll",
+          "clay jars",
+          "wooden ship with square sail",
+          "harbor setting",
+          "wooden cranes"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a man in a Roman tunic and cloak holding a scroll at a harbor. Workers are loading clay jars onto a ship. The setting and details are generally accurate for the period.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate due to its depiction of clothing, setting, and activities that align better with the prompt and historical context.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "julia_portrait",
+      "character": "julia",
+      "shot_type": "portrait",
+      "raw_prompt": "Portrait of Julia, a beautiful young Roman woman, with flowers in her hair",
+      "known_anachronisms": [
+        "flowers in hair are more Renaissance than Roman",
+        "Roman women wore elaborate pinned hairstyles with acus crinales hairpins, not floral wreaths"
+      ],
+      "enhancement_goal": "Julia Aurelia, stola over tunica, palla draped, Roman sella chair, elaborate pinned Trajanic-era coiffure, educated and thoughtful expression",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "FAIL",
+        "raw_anachronisms_found": [
+          "Flowers in the hair are not a typical Roman hairstyle. The hairstyle itself is not a Trajanic-era style. The brooch is not a typical Roman design. The building in the background is not Roman architecture."
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B depicts a woman in vaguely Roman-inspired clothing with flowers in her hair. The hairstyle, flowers, and background architecture are all anachronistic.",
+        "raw_accurate_details": [
+          "The clothing resembles a stola and palla, but the draping is not quite right."
+        ],
+        "triad_verdict": "PARTIAL",
+        "triad_corrections": [
+          "The stola and palla are accurate clothing for a Roman woman. The setting, with frescoes and a fountain, is plausible for a wealthy Roman home."
+        ],
+        "triad_remaining_issues": [
+          "The hair is pinned up, but not in a Trajanic-era style. The chair is not a Roman sella, but a more modern design. The writing tablet is plausible, but the stylus looks too much like a modern pencil."
+        ],
+        "triad_notes": "Image A depicts a woman in Roman clothing, writing on a tablet. While the clothing and setting are generally accurate, the hairstyle, chair, and stylus are not entirely period-appropriate.",
+        "prompt_adherence": "PARTIAL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate than Image B because it includes more plausible Roman elements, even though it has some inaccuracies.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "julia_scene",
+      "character": "julia",
+      "shot_type": "scene",
+      "raw_prompt": "Julia, a Roman woman, relaxing in a beautiful garden reading a book",
+      "known_anachronisms": [
+        "codex book form was emerging but scroll (volumen) was dominant in 110 CE",
+        "garden should be peristyle style with impluvium"
+      ],
+      "enhancement_goal": "Julia in peristyle garden of patrician domus, reading a papyrus scroll (volumen), wax tablet beside her for notes, columned garden with impluvium visible",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern hairstyle",
+          "Modern bench",
+          "Modern fountain"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts a woman in toga-like clothing reading a scroll. The clothing and scroll are accurate, but the hairstyle, bench, and fountain are anachronistic.",
+        "raw_accurate_details": [
+          "Scroll (volumen)",
+          "Toga-like clothing",
+          "Pearl jewelry"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Scroll (volumen)",
+          "Wax tablet",
+          "Peristyle garden with impluvium",
+          "Roman clothing",
+          "Sandals",
+          "Jewelry"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B depicts a woman in Roman clothing reading a scroll in a peristyle garden with an impluvium. A wax tablet is also present. All elements appear historically accurate.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate due to its inclusion of a peristyle garden with impluvium and the absence of modern elements.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "julia_action",
+      "character": "julia",
+      "shot_type": "action",
+      "raw_prompt": "Julia, a young Roman woman, writing a letter to a friend",
+      "known_anachronisms": [
+        "letter on paper is anachronistic \u2014 Romans wrote on wax tablets for correspondence or papyrus sheets"
+      ],
+      "enhancement_goal": "MUST: Julia scratching letters into a small hinged wooden board filled with dark wax using a pointed metal stick \u2014 NO pen, NO paper, NO book, NO quill. MUST: wearing a long draped dress in warm earth tones with a shawl. BACKGROUND: small Roman room with stone walls, a single clay oil lamp with flame, rolled papyrus scrolls stacked on wooden shelves, intelligent focused expression",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern pearl earrings",
+          "Modern hairstyle",
+          "The writing surface appears to be a modern slate board, not a wax tablet.",
+          "The writing instrument looks like a modern pen or pencil, not a stylus."
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts a woman in Roman-style clothing writing in a courtyard. However, the jewelry, hairstyle, writing surface, and writing instrument are anachronistic.",
+        "raw_accurate_details": [
+          "Draped clothing is generally Roman in style.",
+          "The setting with columns and plants suggests a Roman courtyard.",
+          "The woman is writing on a tablet."
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Wax tablet and stylus",
+          "Simple earth-toned clothing",
+          "Rolled papyrus scrolls",
+          "Oil lamp",
+          "Hairstyle with pins",
+          "Stone walls"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B shows a woman writing on a wax tablet with a stylus in a room with papyrus scrolls and an oil lamp. The details are generally accurate for the period.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate because it depicts the correct writing materials and a more plausible setting, while Image A contains several anachronisms in clothing, jewelry, and writing implements.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "julia_hero",
+      "character": "julia",
+      "shot_type": "marketing_hero",
+      "raw_prompt": "Cinematic shot of Julia, an elegant young Roman woman, in ancient Rome",
+      "known_anachronisms": [
+        "no grounding \u2014 could render Renaissance or fantasy setting"
+      ],
+      "enhancement_goal": "MUST: Julia wearing a long floor-length saffron-yellow dress \u2014 vivid golden-yellow color, this is the most important detail \u2014 with a white wool shawl draped over her shoulders. NO purse, NO bag, NO modern accessories. MUST: standing OUTDOORS on stone steps at dusk, dignified intelligent expression, elaborate upswept pinned hairstyle. BACKGROUND: Roman stone building facade behind her, warm golden evening light, open sky visible",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Pearl earrings and necklace are not typical for everyday wear; more likely for special occasions.",
+          "The dress is not saffron-yellow as requested."
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a woman in a toga-like garment with a Roman building in the background. While the setting and general attire are plausible, the pearl jewelry and the color of the dress are not entirely accurate for the prompt.",
+        "raw_accurate_details": [
+          "Roman building in background",
+          "Hairstyle",
+          "Toga-like garment"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Saffron-yellow dress",
+          "White wool shawl",
+          "Stone steps",
+          "Roman stone building facade",
+          "Upswept hairstyle",
+          "Writing tablet and stylus"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a woman in a saffron-yellow dress and white shawl, standing on stone steps in front of a Roman building. She is holding a writing tablet and stylus. The image appears historically accurate.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate because it adheres more closely to the prompt's specifications regarding the saffron-yellow dress and lacks the potentially anachronistic pearl jewelry seen in Image B.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "marcus_dialogue",
+      "character": "marcus",
+      "shot_type": "dialogue",
+      "raw_prompt": "Marcus, a Roman senator, having a meeting with Gaius, a merchant, in ancient Rome",
+      "known_anachronisms": [
+        "vague setting \u2014 no location grounding",
+        "social class distinction between senator and freedman merchant not visible in dress or posture"
+      ],
+      "enhancement_goal": "MUST: Two men standing face to face OUTDOORS in a Roman stone plaza \u2014 the older man in a white toga with a wide purple border stripe, the younger man in a plain linen tunic with a draped wool cloak. MUST: clear class distinction \u2014 the toga-wearing senator stands upright with authority, the merchant is slightly deferential. The merchant holds a small hinged wooden board. BACKGROUND: weathered stone columns of an ancient Roman temple, open sky, stone pavement",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "The toga is not quite right for a senator; the purple stripe is too narrow. The merchant's clothing is too simple, lacking a cloak or any sign of wealth. The clay pot is not necessarily anachronistic, but it doesn't fit the scene of a meeting between a senator and a merchant."
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts two men in a Roman setting. The clothing and props are not entirely accurate for the social classes and scene described.",
+        "raw_accurate_details": [
+          "The setting with Roman columns and buildings is plausible. The general style of clothing is Roman."
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "The toga with the wide purple stripe is accurate for a senator. The merchant's tunic and cloak are appropriate for his social class. The wooden writing board is a plausible object for a merchant. The setting with the temple and marketplace is accurate.",
+          "The senator stands upright with authority, the merchant is slightly deferential."
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B depicts a senator and a merchant in a Roman marketplace. The clothing, objects, and setting are all historically plausible.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate because it correctly depicts the senator's toga, the merchant's clothing and writing instrument, and the overall setting of a Roman marketplace.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "gaius_dialogue",
+      "character": "gaius",
+      "shot_type": "dialogue",
+      "raw_prompt": "Gaius, a Roman merchant, making a business deal with a foreign trader",
+      "known_anachronisms": [
+        "handshake rendered as modern grip rather than Roman dextrarum iunctio",
+        "no period-specific goods visible",
+        "foreign trader has no period-accurate costume"
+      ],
+      "enhancement_goal": "MUST: Two men gripping each other's RIGHT WRISTS \u2014 not a handshake, each man grabs the other's forearm just above the wrist, elbows raised to chest height. MUST: Gaius in a plain linen tunic, the foreign trader wearing colorful layered patterned robes and a head wrap. Between them on a wooden table: a rolled papyrus scroll and tall clay storage jars. BACKGROUND: harbor dock, wooden ship masts visible, rope rigging",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern handshake instead of dextrarum iunctio",
+          "Roman merchant wearing a toga, which was reserved for citizens and formal occasions, not everyday business",
+          "Goods on display are not period-specific"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts two men in what appears to be a Roman marketplace. The Roman merchant is wearing a toga, which is not appropriate for a merchant in a daily business setting. The handshake is also anachronistic. The goods on display are not clearly period-specific.",
+        "raw_accurate_details": [
+          "Architecture is plausible for the period",
+          "Clay pots are period-appropriate"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Dextrarum iunctio (gripping of forearms) is depicted correctly",
+          "Roman merchant is wearing a plain linen tunic",
+          "Foreign trader is wearing colorful layered patterned robes and a head wrap",
+          "Rolled papyrus scroll and tall clay storage jars are present",
+          "Harbor dock and wooden ship masts are visible in the background"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B depicts a Roman merchant and a foreign trader sealing a deal. The scene includes the correct gesture (dextrarum iunctio), clothing, and objects as described in the prompt, making it historically accurate.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate because it correctly depicts the social customs, clothing, and objects of the period, while Image A contains anachronisms and inaccuracies.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "julia_dialogue",
+      "character": "julia",
+      "shot_type": "dialogue",
+      "raw_prompt": "Julia, a young Roman woman, talking with Marcus, an older senator, about philosophy",
+      "known_anachronisms": [
+        "seated in modern chairs rather than Roman benches or garden seats",
+        "codex books rather than papyrus scrolls",
+        "no Roman architectural context"
+      ],
+      "enhancement_goal": "Julia in stola and palla in Stoic discussion with Senator Marcus in a colonnaded peristyle garden \u2014 marble garden benches, open papyrus scrolls, impluvium pool visible, oil lamp, intergenerational respectful dynamic, 110 CE",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PASS",
+        "raw_anachronisms_found": [],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B depicts a similar scene with a young Roman woman and an older man in a peristyle garden. The clothing and setting are historically plausible.",
+        "raw_accurate_details": [
+          "Stola and palla clothing",
+          "Peristyle garden",
+          "Marble garden bench"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Stola and palla clothing",
+          "Papyrus scrolls",
+          "Peristyle garden with impluvium pool",
+          "Marble garden bench",
+          "Oil lamp"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a young Roman woman and an older senator in a peristyle garden, discussing philosophy. The clothing, setting, and objects are all historically plausible for 110 CE Rome.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is slightly more accurate due to the inclusion of the papyrus scrolls and oil lamp, which are relevant to the scene description.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "marcus_public",
+      "character": "marcus",
+      "shot_type": "public_gathering",
+      "raw_prompt": "Marcus, a Roman senator, relaxing at the public baths with other men",
+      "known_anachronisms": [
+        "modern bathing suits or towels shown",
+        "modern pool tiling rather than Roman hypocaust architecture",
+        "no strigils or oil flasks"
+      ],
+      "enhancement_goal": "MUST: Marcus bare-chested sitting at the edge of a large stone pool filled with steaming water \u2014 NO modern towels, NO swimwear. MUST: a servant behind him scraping his back with a curved metal blade and pouring oil from a small clay flask. BACKGROUND: grand arched stone ceiling with high windows letting in light, steam rising from the pool, other men bathing in the background, marble columns",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern towels",
+          "Modern pool tiling"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A shows three men in a Roman bath. It has some accurate architectural details but includes modern towels and pool tiling, which are anachronisms.",
+        "raw_accurate_details": [
+          "Arched stone ceiling",
+          "Marble columns",
+          "Men bathing"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Roman hypocaust architecture",
+          "Strigil",
+          "Oil flask",
+          "Arched stone ceiling",
+          "Marble columns",
+          "Men bathing",
+          "Togas"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B depicts a Roman bath scene with men bathing, a servant using a strigil and oil flask, and accurate Roman architecture. It aligns well with the historical context.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate due to the inclusion of strigils, oil flasks, and accurate Roman hypocaust architecture, while Image A contains modern anachronisms.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "gaius_public",
+      "character": "gaius",
+      "shot_type": "public_gathering",
+      "raw_prompt": "Gaius, a Roman merchant, at a guild meeting with other businessmen",
+      "known_anachronisms": [
+        "modern conference table",
+        "participants in modern business attire",
+        "no Roman collegium architectural setting"
+      ],
+      "enhancement_goal": "Gaius at an Ostia collegium meeting in the schola building \u2014 freedmen in tunics and pallia seated in a semicircle, wax tablets being passed, collegium standard on wall, statue of Mercury as patron deity, 110 CE",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B depicts a group of men in tunics and pallia, holding scrolls, in a Roman setting. The clothing and architecture are generally accurate, but the setting is more of a public forum than a collegium schola. The scrolls are plausible, but wax tablets would be more common for note-taking.",
+        "raw_accurate_details": [
+          "Tunics and pallia",
+          "Scrolls",
+          "Architecture"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Tunics and pallia",
+          "Wax tablets",
+          "Statue of Mercury",
+          "Collegium standard on wall",
+          "Seating arrangement",
+          "Architecture"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a group of men in tunics and pallia, seated in a semicircle, with a statue of Mercury and a collegium standard on the wall. Wax tablets are being used. The architecture and clothing are consistent with Roman collegium meeting in 110 CE.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate because it depicts a more specific and accurate setting for a collegium meeting, including the statue of Mercury and the collegium standard, and the use of wax tablets.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "julia_public",
+      "character": "julia",
+      "shot_type": "public_gathering",
+      "raw_prompt": "Julia, a Roman woman, watching a religious ceremony at a temple",
+      "known_anachronisms": [
+        "Christian-style kneeling or reverence (not Roman practice)",
+        "church-like interior architecture",
+        "wrong ceremonial dress for Roman religion"
+      ],
+      "enhancement_goal": "MUST: women in ankle-length white robes with white woolen bands woven through their upswept hair, tending a small fire burning on a circular stone altar. MUST: Julia standing to the side with her white palla fabric drawn up over her head in reverence. BACKGROUND: marble temple columns, stone plaza pavement, Forum Romanum crowd in Roman dress",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "The dress of the woman is not entirely accurate. The style of the dress and the blue fabric are not typical of Roman women's clothing. The hairstyle is also not quite right, and the pearl earrings are anachronistic."
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts a woman in what is supposed to be ancient Rome, watching a religious ceremony. While the setting and some details are accurate, the woman's clothing and jewelry are not entirely historically accurate.",
+        "raw_accurate_details": [
+          "The architecture of the temple and the general setting are plausible for ancient Rome. The presence of a crowd in togas is also accurate."
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "The clothing of the women, including the white robes and headbands, is accurate for Vestal Virgins. The palla worn by Julia is also accurate. The presence of a small fire on a stone altar is consistent with Roman religious practices. The architecture and setting are plausible for ancient Rome."
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B depicts a Roman woman watching a religious ceremony. The clothing, setting, and religious practices are all depicted accurately.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate because it depicts the clothing, setting, and religious practices more accurately than Image A.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "marcus_domestic",
+      "character": "marcus",
+      "shot_type": "domestic",
+      "raw_prompt": "Marcus, a Roman senator, greeting visitors at his home in the morning",
+      "known_anachronisms": [
+        "modern front door or entryway",
+        "visitors in generic or modern clothing",
+        "no impluvium atrium architecture"
+      ],
+      "enhancement_goal": "Marcus in toga praetexta receiving morning salutatio in his Esquiline Hill domus atrium \u2014 clientes lined up, impluvium pool under compluvium sky opening, lararium shrine with Lares, mosaic floor, oil lamps, 110 CE",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PASS",
+        "raw_anachronisms_found": [],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts a man in a toga praetexta, likely a senator, in an atrium setting. The architecture and clothing appear accurate for the period.",
+        "raw_accurate_details": [
+          "Toga praetexta",
+          "Atrium architecture with columns and compluvium",
+          "Scroll"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Toga praetexta",
+          "Atrium architecture with impluvium",
+          "Scroll",
+          "Lararium shrine",
+          "Roman sandals",
+          "Roman tunics"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B shows a senator in a toga praetexta greeting visitors in an atrium with an impluvium. The presence of the lararium shrine and the clothing of the visitors are accurate.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is slightly more accurate due to the inclusion of the impluvium and lararium, which are key features of a Roman domus atrium.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "gaius_domestic",
+      "character": "gaius",
+      "shot_type": "domestic",
+      "raw_prompt": "Gaius, a Roman merchant, working in his office with his staff",
+      "known_anachronisms": [
+        "modern desk and chairs",
+        "paper documents and modern writing instruments",
+        "no period-specific Roman commercial workspace"
+      ],
+      "enhancement_goal": "Gaius in his Ostia taberna reviewing a wax tablet manifest \u2014 freedmen workers loading amphorae in background, abacus counting board, papyrus records in cubbyhole shelves, harbor visible through open doorway, clay seals and balance weights, 110 CE",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern looking desk and chair",
+          "Paper documents",
+          "Modern writing instrument"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts a man in a tunic at a desk with two other men. The clothing and scrolls are accurate, but the desk, chair, paper documents, and writing instrument are anachronistic.",
+        "raw_accurate_details": [
+          "Tunics are period appropriate",
+          "Scrolls are accurate",
+          "Stone architecture is plausible"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Tunics are period appropriate",
+          "Abacus",
+          "Wax tablet",
+          "Amphorae",
+          "Sandals",
+          "Harbor setting",
+          "Freedmen workers"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B depicts a man in a tunic at a table with an abacus and wax tablet, with workers loading amphorae in the background. The setting and objects are historically plausible for 110 CE Rome.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate because it avoids the anachronisms present in Image A and includes more period-specific details.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "julia_domestic",
+      "character": "julia",
+      "shot_type": "domestic",
+      "raw_prompt": "Julia, a Roman woman, getting ready in her bedroom with her maids",
+      "known_anachronisms": [
+        "wall mirror (Romans only had small hand mirrors of polished bronze)",
+        "modern cosmetics containers",
+        "modern bedroom furniture"
+      ],
+      "enhancement_goal": "MUST: Julia seated on a backless wooden stool while a maid pins up her hair with long metal hairpins into an elaborate upswept style. MUST: another maid holds a small round polished bronze hand mirror \u2014 NOT a wall mirror, a small handheld disc mirror. On a low wooden table beside her: ivory combs and a small stone perfume bottle. BACKGROUND: simple Roman bedroom with stone walls, a low wooden bed frame with cloth, a single clay oil lamp. NO modern furniture, NO modern cosmetics",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "wall mirror",
+          "modern bedroom furniture"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a Roman woman getting ready with her maids, but it contains anachronisms such as a wall mirror and modern bedroom furniture. While the clothing and hairstyle are accurate, the presence of these modern elements detracts from its historical accuracy.",
+        "raw_accurate_details": [
+          "Roman clothing",
+          "hairstyle",
+          "small round polished bronze hand mirror"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Roman clothing",
+          "hairstyle",
+          "backless stool",
+          "small round polished bronze hand mirror",
+          "ivory combs",
+          "stone perfume bottle",
+          "simple Roman bedroom with stone walls",
+          "low wooden bed frame with cloth",
+          "clay oil lamp"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a Roman woman getting ready with her maids. It accurately portrays the clothing, hairstyle, furniture, and objects used in ancient Rome, making it historically accurate.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate because it avoids modern elements and adheres more closely to the historical setting of ancient Rome.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "marcus_transit",
+      "character": "marcus",
+      "shot_type": "transit",
+      "raw_prompt": "Marcus, a Roman senator, being carried through the streets of Rome in a chair",
+      "known_anachronisms": [
+        "litter may render as wrong-culture palanquin or modern sedan chair",
+        "background crowd in modern dress",
+        "cobblestone too modern-looking"
+      ],
+      "enhancement_goal": "MUST: Marcus in a white toga with purple border, reclining on cushions inside a covered wooden litter carried on poles by four men in simple tunics \u2014 fabric curtains pulled open showing his face. MUST: narrow ancient Roman street with tall stone apartment buildings on both sides, rough stone paving. BACKGROUND: pedestrians in Roman togas and tunics, a small round stone temple visible down the street, warm morning sunlight",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "raw_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "The chair is not a covered litter as described, but an open chair. The cobblestone looks too modern. The crowd is too large and dense for a senator's procession."
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image A depicts a Roman senator being carried in an open chair through a crowded street. While the clothing and architecture are generally accurate, the chair is not the covered litter described, and the crowd size is implausible.",
+        "raw_accurate_details": [
+          "The senator is wearing a toga with a purple border, indicating his status. The tunics worn by the carriers are appropriate. The architecture of the buildings is generally Roman."
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "The senator is reclining in a covered litter with curtains. He is wearing a toga with a purple border. The carriers are wearing simple tunics. The street is narrow and paved with rough stones. A round temple is visible in the background."
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image B depicts a Roman senator reclining in a covered litter being carried through a narrow street. The details of the litter, clothing, architecture, and setting are all historically plausible.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image B is more accurate because it depicts the senator in a covered litter as described, while Image A shows him in an open chair and has an implausibly large crowd.",
+        "which_more_accurate_blind": "B",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "gaius_transit",
+      "character": "gaius",
+      "shot_type": "transit",
+      "raw_prompt": "Gaius, a Roman merchant, arriving at port on a ship",
+      "known_anachronisms": [
+        "modern ship hull design or rigging",
+        "modern port infrastructure",
+        "wrong sail configuration for a Roman round merchant vessel"
+      ],
+      "enhancement_goal": "MUST: Gaius in a plain linen tunic standing at the front of a wide wooden merchant ship with a single square sail \u2014 the ship is broad and rounded, a cargo vessel not a warship. MUST: large clay jars with two handles stacked as cargo on the deck. BACKGROUND: approaching a stone harbor with a squat stone lighthouse, workers on the stone quay waiting, blue Mediterranean sea, clear sky",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "Modern-looking buildings in the background",
+          "Modern-looking dock construction"
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a Roman merchant in a harbor setting. While the clothing and general setting are accurate, the buildings in the background and the dock construction appear too modern.",
+        "raw_accurate_details": [
+          "Roman clothing (tunic and toga)",
+          "Roman harbor setting",
+          "Merchant with a leather bag"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Roman round merchant vessel with a single square sail",
+          "large clay jars with two handles stacked as cargo on the deck",
+          "stone harbor with a squat stone lighthouse",
+          "workers on the stone quay waiting",
+          "blue Mediterranean sea",
+          "clear sky",
+          "plain linen tunic"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a Roman merchant arriving at port on a ship. The image is historically accurate, showing a round merchant vessel loaded with amphorae, a stone harbor with a lighthouse, and workers on the quay. The merchant is wearing a plain linen tunic.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate due to the historically accurate ship design, cargo, and harbor details, while Image B contains modern-looking architectural elements.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    },
+    {
+      "id": "julia_transit",
+      "character": "julia",
+      "shot_type": "transit",
+      "raw_prompt": "Julia, a Roman woman, walking through ancient Rome with her servants",
+      "known_anachronisms": [
+        "patrician woman walking without proper escort",
+        "modern street setting",
+        "clothing too casual for a patrician woman outdoors"
+      ],
+      "enhancement_goal": "MUST: Julia in a long draped dress with a shawl pulled modestly over her head, walking OUTDOORS down a narrow ancient Roman street. MUST: a female servant walking behind her and a male guard beside her \u2014 NO modern clothing on anyone. NO notepad, NO book, NO pen \u2014 her hands are empty or holding the edge of her shawl. BACKGROUND: stone building facades with faded painted plaster walls, rough stone street paving, a small stone water fountain built into a wall, warm morning light",
+      "raw_image_exists": true,
+      "triad_image_exists": true,
+      "evaluation": {
+        "blind_order": "triad_first",
+        "raw_verdict": "PARTIAL",
+        "raw_anachronisms_found": [
+          "The woman's blue dress with gold embroidery is too elaborate for everyday wear. The pearl necklace is also a bit too much for a simple walk in the city. The clothing of the other people in the background is too plain and drab."
+        ],
+        "raw_anachronisms_missed": [],
+        "raw_notes": "Image B shows a Roman woman in a blue and white stola walking down a wider Roman street with other people around. While the setting and general clothing styles are accurate, the woman's dress is too elaborate and the background characters' clothing is too drab.",
+        "raw_accurate_details": [
+          "Roman architecture (columns, buildings), Roman street paving, Roman clothing (tunics, stola, palla)"
+        ],
+        "triad_verdict": "PASS",
+        "triad_corrections": [
+          "Roman clothing (toga-like dress, stola, palla), Roman street paving, Roman architecture, Roman legionary armor, water fountain"
+        ],
+        "triad_remaining_issues": [],
+        "triad_notes": "Image A depicts a Roman woman in a red stola and yellow palla walking down a narrow Roman street with a female servant and a Roman legionary guard. The setting, clothing, and accessories appear historically accurate for the period.",
+        "prompt_adherence": "FULL",
+        "prompt_adherence_notes": "",
+        "overall_improvement": "YES",
+        "overall_notes": "Image A is more accurate because the clothing and setting are more plausible for a typical Roman street scene, while Image B's clothing is too elaborate and the background characters' clothing is too drab.",
+        "which_more_accurate_blind": "A",
+        "which_more_accurate": "TRIAD"
+      }
+    }
+  ]
+}
