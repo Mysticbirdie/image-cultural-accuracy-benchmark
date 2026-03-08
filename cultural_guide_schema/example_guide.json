@@ -1,0 +1,74 @@
+{
+  "_note": "This is a SCHEMA EXAMPLE showing the structure of a Triad Engine domain guide. The actual Rome 110 CE guide used in this benchmark is proprietary. You can build your own guide for any domain using this structure.",
+
+  "overview": "A 2-3 paragraph overview of the domain setting, establishing time, place, and cultural context.",
+
+  "time_period_context": {
+    "setting": "Exact year and ruling authority (e.g. '110 CE, during the reign of Emperor Trajan')",
+    "ruler": "Name and key facts about the current ruler/authority",
+    "population": "Population statistics and geographic scope",
+    "currency": "Monetary system with denominations and relative values"
+  },
+
+  "anachronisms_to_avoid": {
+    "not_yet_built": [
+      "Buildings, monuments, or infrastructure that do not exist yet in your time period",
+      "Example: Hadrian's Wall (not started until 122 CE)"
+    ],
+    "not_yet_happened": [
+      "Events that have not occurred yet",
+      "Example: Trajan's Parthian War (not until 114 CE)"
+    ],
+    "already_dead": [
+      "Historical figures who have already died by your time period",
+      "Example: Emperor Nero (died 68 CE)"
+    ],
+    "technology_not_available": [
+      "Technologies, materials, or objects that do not exist in your period",
+      "Example: No stirrups, no paper (papyrus/wax tablets instead), no glass windows (wooden shutters)"
+    ]
+  },
+
+  "key_locations": {
+    "location_name": {
+      "description": "Physical description of the location",
+      "historical_use": "What this location was actually used for (prevents venue confusion)",
+      "who_goes_here": "Which social classes frequent this location"
+    }
+  },
+
+  "social_structure": {
+    "class_name": {
+      "description": "Role and status in society",
+      "clothing": "What this class wears — specific garments, colors, materials",
+      "clothing_restrictions": "What this class does NOT wear (e.g. freedmen don't wear togas)",
+      "daily_life": "Typical activities and routines",
+      "housing": "Where and how they live"
+    }
+  },
+
+  "daily_life": {
+    "clothing_by_class": "Detailed clothing descriptions per social class — this is critical for image accuracy",
+    "food_and_dining": "Period-accurate food, utensils, dining customs",
+    "furniture_and_objects": "What furniture and household objects actually existed",
+    "grooming": "Hair styles, cosmetics, mirrors, tools — all period-specific"
+  },
+
+  "customs": {
+    "greetings_and_gestures": "How people greet, shake hands (or don't), show respect",
+    "religious_practices": "What religious ceremonies actually looked like (not modern assumptions)",
+    "business_customs": "How trade and commerce were conducted"
+  },
+
+  "characters": [
+    {
+      "id": "character_id",
+      "name": "Character Name",
+      "age": 30,
+      "role": "Social role and occupation",
+      "appearance": "Physical description for image generation consistency",
+      "clothing_details": "Exact garments, colors, accessories — specific to their social class",
+      "key_visual_markers": "The 2-3 details that visually distinguish this character"
+    }
+  ]
+}

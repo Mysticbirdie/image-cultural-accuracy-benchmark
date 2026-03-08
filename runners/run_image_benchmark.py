@@ -676,8 +676,17 @@ def main():
     # Load data
     with open(IMAGE_PROMPTS_FILE) as f:
         prompt_data = json.load(f)
-    with open(CULTURAL_GUIDE_FILE) as f:
-        cultural_guide = json.load(f)
+    if not CULTURAL_GUIDE_FILE.exists():
+        print("ERROR: cultural_guide.json not found in data/")
+        print("  The Rome 110 CE domain guide is not included in this repository.")
+        print("  See cultural_guide_schema/example_guide.json for the expected structure.")
+        print("  You can still run RAW-only generation with: --raw-only")
+        if not args.raw_only:
+            sys.exit(1)
+        cultural_guide = {}
+    else:
+        with open(CULTURAL_GUIDE_FILE) as f:
+            cultural_guide = json.load(f)
 
     # Load character data — try local characters.json, fall back to defaults
     char_data_file = DATA_DIR / "characters.json"

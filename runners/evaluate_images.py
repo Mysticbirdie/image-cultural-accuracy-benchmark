@@ -50,22 +50,18 @@ IMAGE_PROMPTS_FILE = DATA_DIR / "image_prompts.json"
 
 # ── Load .env ──────────────────────────────────────────────────────────────────
 def _load_dotenv():
-    for candidate in [
-        SCRIPT_DIR.parent.parent / ".env",
-        SCRIPT_DIR.parent.parent / "backend" / ".env",
-        SCRIPT_DIR.parent.parent / "02-Image-Factory-API" / ".env",
-    ]:
-        if candidate.exists():
-            with open(candidate) as f:
-                for line in f:
-                    line = line.strip()
-                    if line and not line.startswith("#") and "=" in line:
-                        k, _, v = line.partition("=")
-                        k = k.strip()
-                        v = v.strip().strip('"').strip("'")
-                        if k and k not in os.environ:
-                            os.environ[k] = v
-            break
+    """Load .env file from repo root if present."""
+    env_file = SCRIPT_DIR.parent / ".env"
+    if env_file.exists():
+        with open(env_file) as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, _, v = line.partition("=")
+                    k = k.strip()
+                    v = v.strip().strip('"').strip("'")
+                    if k and k not in os.environ:
+                        os.environ[k] = v
 
 _load_dotenv()
 
